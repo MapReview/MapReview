@@ -259,6 +259,9 @@ a {
   color: #fff;
   background-color: #125acd; }
 
+.angular-google-map-container {
+  height: 400px; }
+
 /*********************
 * Animations
 *********************/

@@ -4,7 +4,9 @@ angular.module('MyApp', [
   'ngSanitize',
   'mgcrea.ngStrap',
   'auth',
-  'profile'
+  'profile',
+  'uiGmapgoogle-maps',
+  'map'
 ])
 
 .config(function($routeProvider) {
