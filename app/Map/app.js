@@ -3,13 +3,11 @@
 
   angular
           .module('map', [
-          'ngRoute',
-          'uiGmapgoogle-maps',
-          'map',
+          'ngRoute'
           ])
-        app.config(function(uiGmapGoogleMapApiProvider, $routeProvider) {
+        .config(function(uiGmapGoogleMapApiProvider, $routeProvider) {
                 uiGmapGoogleMapApiProvider.configure({
-                key: 'AIzaSyBjn_JnmB5-anlcP2jenrS702gZQ-ck7y8',
+                key: 'AIzaSyAEx21qDaiRPmhShfVhsUjcz0varjmAvuo',
                 v: '3.17',
                 libraries: 'weather,geometry,visualization'
             })
