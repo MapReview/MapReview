@@ -5,6 +5,7 @@ angular.module('MyApp', [
   'mgcrea.ngStrap',
   'auth',
   'profile',
+  'reviews',
   'uiGmapgoogle-maps',
   'map'
 ])
