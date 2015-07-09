@@ -28,5 +28,4 @@
         .otherwise({
           redirectTo: '/404'
         });
-    });
 })();
