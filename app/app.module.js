@@ -4,7 +4,8 @@ angular.module('MyApp', [
   'ngSanitize',
   'mgcrea.ngStrap',
   'auth',
-  'profile'
+  'profile',
+  'reviews'
 ])
 
 .config(function($routeProvider) {

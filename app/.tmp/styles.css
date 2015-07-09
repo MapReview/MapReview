@@ -177,6 +177,17 @@ a {
 .btn .fa {
   margin-right: 5px; }
 
+.reviewForm input, .reviewForm textarea {
+  display: block;
+  margin: 20px 0px 20px 0px; }
+
+.titleRating input {
+  display: inline-block;
+  margin-right: 50px; }
+
+.titleRating select {
+  display: inline-block; }
+
 /*********************
 * Social Buttons
 *********************/
