@@ -4,10 +4,13 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-sm-6">
-          <h2>Heading 1</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-          <p><a class="btn btn-primary" href="#">View details »</a>
-          </p>
+          <div id="map_canvas">
+            <div ng-controller="MapController">
+               <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" events="map.events">
+                   <ui-gmap-marker ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id" options="m.options"></ui-gmap-marker>
+               </ui-gmap-google-map>
+            </div>
+          </div>
         </div>
         <div class="col-sm-6">
           <div ng-include="'../../reviews/views/form.html'"></div>

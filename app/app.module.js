@@ -5,7 +5,9 @@ angular.module('MyApp', [
   'mgcrea.ngStrap',
   'auth',
   'profile',
-  'reviews'
+  'reviews',
+  'uiGmapgoogle-maps',
+  'map'
 ])
 
 .config(function($routeProvider) {

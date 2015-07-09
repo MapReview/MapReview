@@ -1,8 +1,8 @@
 (function() {
 
   angular
-    .module('map', ['uiGmapgoogle-maps'])
-    .controller("MapController", function($scope, uiGmapGoogleMapApi, InfoService) {
+    .module('map')
+    .controller('MapController', function($scope, uiGmapGoogleMapApi) {
                   // Do stuff with $scope.
                   angular.extend($scope, {
                       map: {
@@ -39,8 +39,6 @@
                   uiGmapGoogleMapApi.then(function(googleMaps) {
                   api = googleMaps;
                   });
-
-
 
 
                   uiGmapGoogleMapApi.then(function(maps) {
