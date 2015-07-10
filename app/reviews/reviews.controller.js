@@ -12,9 +12,8 @@
         vm.reviews = reviews.data;
       });
 
-      vm.getReview = function(lat, lng, review){
-        vm.review.lat = lat;
-        vm.review.lng = lng;
+      vm.getReview = function(coords, review){
+        vm.review.coords = coords;
         ReviewsService.sendReview(review);
         vm.review = {};
         var element = angular.element(document.querySelector('.reviewForm'));

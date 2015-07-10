@@ -2,7 +2,7 @@
 
   angular
     .module('map')
-    .controller('MapController', function($scope, uiGmapGoogleMapApi) {
+    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService) {
       // Do stuff with $scope.
       $scope.map = {
           center: {
@@ -11,6 +11,7 @@
           },
           zoom: 4,
           showTraffic: true,
+          coords: [],
           markers: [],
           maxZoom: function(map) {
             var maxZoom = 13;
@@ -31,8 +32,9 @@
                     }
                 };
 
-                $scope.map.markers.push(marker);
+                $scope.map.markers.unshift(marker);
                 $scope.$apply();
+                console.log($scope.map.markers);
                 var element = angular.element(document.querySelector('.reviews'));
                 element.addClass('hide');
                 var secondElement = angular.element(document.querySelector('.reviewForm'));
@@ -46,6 +48,13 @@
         $scope.windowOptions = {
           visible: false
         };
+
+        MapService.getMarkers().then(function(marker) {
+          for(var i = 0; i < marker.length; i++) {
+            $scope.map.markers.push(marker[i].coords);
+          }
+        })
+
         $scope.onClick = function() {
           $scope.windowOptions.visible = !$scope.windowOptions.visible;
         };
