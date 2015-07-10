@@ -7,7 +7,6 @@
 
       var getReviews = function(){
         return $http.get(reviewsUrl).then(function(reviews){
-          console.log(reviews);
           return reviews;
         })
       };
