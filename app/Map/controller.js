@@ -56,6 +56,7 @@
 
         var events = {
         places_changed: function (searchBox) {}
+
         }
         $scope.searchbox = {
           template:'searchbox.tpl.html',
@@ -70,9 +71,8 @@
 
         });
 
-      })
-
-                  //***** Custom Map Buttons *****//
+          //***** Custom Map Buttons *****//
+          
     .controller('controlCtrl', function ($scope) {
       $scope.controlText = 'Fav1';
       $scope.danger = false;
