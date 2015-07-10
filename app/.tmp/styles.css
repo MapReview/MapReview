@@ -201,6 +201,9 @@ a {
 .reviewRightAlign {
   text-align: right; }
 
+.hide {
+  display: none; }
+
 /*********************
 * Social Buttons
 *********************/

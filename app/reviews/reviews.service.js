@@ -11,8 +11,17 @@
         })
       };
 
+      var sendReview = function(review){
+        $http.post(reviewsUrl, review).success(function(response){
+          $rootScope.$broadcast('review:created');
+        }).error(function(error){
+          console.log("error " + error);
+        })
+      };
+
       return {
-        getReviews: getReviews
+        getReviews: getReviews,
+        sendReview: sendReview
       };
 
     });
