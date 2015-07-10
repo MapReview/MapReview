@@ -6,33 +6,43 @@
                   // Do stuff with $scope.
                   angular.extend($scope, {
                       map: {
+
                           center: {
                               latitude: 42.3349940452867,
                               longitude:-71.0353168884369
                           },
                           zoom: 11,
                           markers: [],
+                          maxZoom: function(map) {
+                            var maxZoom = 13;
+                            if (map.getZoom() > maxZoom) { map.setZoom(maxZoom) };
+                            console.log(map);
+                          },
                           events: {
-                          click: function (map, eventName, originalEventArgs) {
-                              var e = originalEventArgs[0];
-                              var lat = e.latLng.lat(),lon = e.latLng.lng();
-                              var marker = {
-                                  id: Date.now(),
-                                  coords: {
-                                      latitude: lat,
-                                      longitude: lon
-                                  },
-                                  options: {
-                                    animation: api.Animation.DROP,
-                                  }
-                              };
+                            click: function (map, eventName, originalEventArgs) {
+                                var e = originalEventArgs[0];
+                                var lat = e.latLng.lat(),lon = e.latLng.lng();
+                                var marker = {
+                                    id: Date.now(),
+                                    coords: {
+                                        latitude: lat,
+                                        longitude: lon
+                                    },
+                                    options: {
+                                      animation: api.Animation.DROP,
+                                    }
+                                };
 
-                              $scope.map.markers.push(marker);
-                              console.log($scope.map.markers);
-                              $scope.$apply();
-                          }
+                                $scope.map.markers.push(marker);
+                                console.log($scope.map.markers);
+                                $scope.$apply();
+                                console.log(map.getZoom());
+                            },
+                            zoom_changed: function (map, eventName, originalEventArgs) {
+                                $scope.map.maxZoom(map)
+                            }
                       }
-                      }
+                    }
                   })
 
                   var api;
@@ -47,6 +57,5 @@
                     });
 
                   });
-
 
 })();
