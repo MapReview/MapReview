@@ -61,6 +61,13 @@
         uiGmapGoogleMapApi.then(function(maps) {
 
         });
+
+        var watchCallback = function(){
+          console.log("hello from maps");
+        }
+
+        $scope.$on('review:created', watchCallback);
+
       })
 
                   //***** Custom Map Buttons *****//
