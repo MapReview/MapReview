@@ -20,12 +20,4 @@
           redirectTo: '/404'
         });
       })
-      $routeProvider
-        .when('/', {
-          templateUrl: 'views/map.html',
-          controller: 'MapController'
-        })
-        .otherwise({
-          redirectTo: '/404'
-        });
 })();

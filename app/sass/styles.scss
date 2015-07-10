@@ -224,6 +224,15 @@ a {
   margin: 20px 0px 20px 0px;
 }
 
+.reviewForm input{
+  width: 60%;
+}
+
+.reviewForm textarea{
+  height: 250px;
+  width: 95%;
+}
+
 .titleRating input{
   display: inline-block;
   margin-right: 50px;
@@ -231,6 +240,14 @@ a {
 
 .titleRating select{
   display: inline-block;
+}
+
+.singleReview p{
+  margin-bottom: 30px;
+}
+
+.reviewRightAlign{
+  text-align: right;
 }
 
 /*********************
