@@ -19,9 +19,27 @@
         })
       };
 
+      var deleteReview = function(id){
+        $http.delete(reviewsUrl + "/" + id).success(function(response){
+          $rootScope.$broadcast('review:deleted');
+        }).error(function(error){
+          console.log("error " + error);
+        })
+      }
+
+      var editReview = function(review, id){
+        $http.put(reviewsUrl + "/" + id, review).success(function(response){
+          $rootScope.$broadcast('review:edited');
+        }).error(function(error){
+          console.log("error " + error);
+        })
+      }
+
       return {
         getReviews: getReviews,
-        sendReview: sendReview
+        sendReview: sendReview,
+        deleteReview: deleteReview,
+        editReview: editReview
       };
 
     });
