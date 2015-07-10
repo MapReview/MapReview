@@ -7,9 +7,9 @@
     ])
     .config(function(uiGmapGoogleMapApiProvider, $routeProvider) {
           uiGmapGoogleMapApiProvider.configure({
-          key: 'AIzaSyAEx21qDaiRPmhShfVhsUjcz0varjmAvuo',
+          key: 'AIzaSyBjn_JnmB5-anlcP2jenrS702gZQ-ck7y8',
           v: '3.17',
-          libraries: 'weather,geometry,visualization'
+          libraries: 'places,weather,geometry,visualization'
       })
       $routeProvider
         .when('/', {
