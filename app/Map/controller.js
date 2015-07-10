@@ -42,7 +42,7 @@
             },
             zoom_changed: function (map, eventName, originalEventArgs) {
                 $scope.map.maxZoom(map)
-            }
+            },
           }
         }
         $scope.windowOptions = {
@@ -53,7 +53,16 @@
           for(var i = 0; i < marker.length; i++) {
             $scope.map.markers.push(marker[i].coords);
           }
-        })
+        });
+
+        $scope.reloadMap = function() {
+          MapService.getMarkers().then(function(marker) {
+              $scope.map.markers = []
+            for(var i = 0; i < marker.length; i++) {
+              $scope.map.markers.push(marker[i].coords);
+            }
+          });
+        }
 
         $scope.onClick = function() {
           $scope.windowOptions.visible = !$scope.windowOptions.visible;

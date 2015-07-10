@@ -22,6 +22,13 @@
         secondElement.removeClass('hide');
       }
 
+      vm.cancelPost = function () {
+        var element = angular.element(document.querySelector('.reviewForm'));
+        element.addClass('hide');
+        var secondElement = angular.element(document.querySelector('.reviews'));
+        secondElement.removeClass('hide');
+      }
+
       var watchCallback = function () {
           ReviewsService.getReviews().then(function (reviews) {
             vm.reviews = reviews.data;
