@@ -9,7 +9,7 @@
           uiGmapGoogleMapApiProvider.configure({
           key: 'AIzaSyBjn_JnmB5-anlcP2jenrS702gZQ-ck7y8',
           v: '3.17',
-          libraries: 'places','weather','geometry','visualization'
+          libraries: 'places,weather,geometry,visualization'
       })
       $routeProvider
         .when('/', {
