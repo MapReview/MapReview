@@ -1,4 +1,3 @@
-<div ng-controller="MapController" ng-model="$scope.map.events.dblclick()"></div>
 <div class="reviewForm" ng-controller = "ReviewsController as ReviewsCtrl">
   <h2>Add a Review</h2>
   <form name="reviewForm" ng-submit="reviewForm.$valid && ReviewsCtrl.getReview(ReviewsCtrl.review)" novalidate>
@@ -15,7 +14,7 @@
       </select>
     </div>
     <textarea name="review" value="" placeholder="Review" ng-model="ReviewsCtrl.review.review" required></textarea>
-    <button type="submit" name="reviewForm">Submit</button>
+    <button type="submit" name="reviewForm" >Submit</button>
     <button type="button">Cancel</button>
   </form>
 </div>

@@ -11,14 +11,14 @@
           },
           zoom: 4,
           showTraffic: true,
+          coords: [],
           markers: [],
           maxZoom: function(map) {
             var maxZoom = 13;
             if (map.getZoom() > maxZoom) { map.setZoom(maxZoom) };
-            console.log(map);
           },
           events: {
-            click: function (map, eventName, originalEventArgs) {
+            dblclick: function (map, eventName, originalEventArgs) {
                 var e = originalEventArgs[0];
                 var lat = e.latLng.lat(),lon = e.latLng.lng();
                 var marker = {
@@ -33,9 +33,10 @@
                 };
 
                 $scope.map.markers.push(marker);
-                console.log($scope.map.markers);
+                $scope.map.coords.pop($scope.map.marker);
                 $scope.$apply();
-                console.log(map.getZoom());
+                console.log($scope.map.coords);
+                return marker.coords;
             },
             zoom_changed: function (map, eventName, originalEventArgs) {
                 $scope.map.maxZoom(map)
@@ -45,6 +46,9 @@
         $scope.windowOptions = {
           visible: false
         };
+
+
+
         $scope.onClick = function() {
           $scope.windowOptions.visible = !$scope.windowOptions.visible;
         };
