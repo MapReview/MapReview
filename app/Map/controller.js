@@ -87,13 +87,6 @@
             },
             "zoom": 18
         };
-        $scope.marker = {
-            id: 0,
-            coords: {
-                latitude: place[0].geometry.location.lat(),
-                longitude: place[0].geometry.location.lng()
-            }
-        };
     }
 };
 $scope.searchbox = {
