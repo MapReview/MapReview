@@ -22,11 +22,19 @@
         secondElement.removeClass('hide');
       }
 
+
       vm.cancelPost = function () {
         var element = angular.element(document.querySelector('.reviewForm'));
         element.addClass('hide');
         var secondElement = angular.element(document.querySelector('.reviews'));
         secondElement.removeClass('hide');
+
+      vm.deleteReview = function(id){
+        ReviewsService.deleteReview(id);
+      }
+
+      vm.editReview = function(review, id){
+        ReviewsService.editReview(review, id);
       }
 
       var watchCallback = function () {
@@ -36,7 +44,8 @@
         };
 
       $scope.$on('review:created', watchCallback);
-
+      $scope.$on('review:deleted', watchCallback);
+      $scope.$on('review:edited', watchCallback);
     });
 
 })();

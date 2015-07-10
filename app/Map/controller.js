@@ -73,12 +73,34 @@
         $scope.title = "The Iron Yard!";
 
         var events = {
-          places_changed: function (searchBox) {}
+        places_changed: function (searchBox) {
+        var place = searchBox.getPlaces();
+        if (!place || place == 'undefined' || place.length == 0) {
+            console.log('no place data :(');
+            return;
         }
-        $scope.searchbox = {
-          template:'searchbox.tpl.html',
-          events:events
+
+        $scope.map = {
+            "center": {
+                "latitude": place[0].geometry.location.lat(),
+                "longitude": place[0].geometry.location.lng()
+            },
+            "zoom": 18
         };
+        $scope.marker = {
+            id: 0,
+            coords: {
+                latitude: place[0].geometry.location.lat(),
+                longitude: place[0].geometry.location.lng()
+            }
+        };
+    }
+};
+$scope.searchbox = {
+  template: 'searchbox.tpl.html',
+  events: events
+  };
+
         var api;
         uiGmapGoogleMapApi.then(function(googleMaps) {
           api = googleMaps;
@@ -97,14 +119,14 @@
       })
 
                   //***** Custom Map Buttons *****//
-    .controller('controlCtrl', function ($scope) {
-      $scope.controlText = 'Fav1';
-      $scope.danger = false;
-      $scope.controlClick = function () {
-        $scope.danger = !$scope.danger;
-        alert('We can make this do something');
-      };
-    })
+    // .controller('controlCtrl', function ($scope) {
+    //   $scope.controlText = 'Fav1';
+    //   $scope.danger = false;
+    //   $scope.controlClick = function () {
+    //     $scope.danger = !$scope.danger;
+    //     alert('We can make this do something');
+    //   };
+    // })
 
 
 

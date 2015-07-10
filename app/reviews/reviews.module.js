@@ -5,7 +5,7 @@
       'ngRoute'
     ])
     .config(function($routeProvider){
-      
+
     });
 
 })();

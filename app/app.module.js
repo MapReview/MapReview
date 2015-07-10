@@ -7,7 +7,8 @@ angular.module('MyApp', [
   'profile',
   'reviews',
   'uiGmapgoogle-maps',
-  'map'
+  'map',
+  'myReviews'
 ])
 
 .config(function($routeProvider) {
