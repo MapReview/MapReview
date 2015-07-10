@@ -1,10 +1,10 @@
 <div class="reviewForm" ng-controller = "ReviewsController as ReviewsCtrl">
   <h2>Add a Review</h2>
-  <form name="reviewForm">
+  <form name="reviewForm" ng-submit="reviewForm.$valid && ReviewsCtrl.getReview(ReviewsCtrl.review)" novalidate>
     <div class="titleRating">
-      <input type="text" name="title" value="" placeholder="Title">
+      <input type="text" name="title" value="" placeholder="Title" ng-model="ReviewsCtrl.review.title" required>
       <label for="rating">Rating </label>
-      <select name="rating">
+      <select name="rating" ng-model="ReviewsCtrl.review.rating" required>
           <option value="" disabled="disabled" selected="selected"></option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -13,8 +13,8 @@
           <option value="5">5</option>
       </select>
     </div>
-    <textarea name="review" value="" cols="70" rows="10" placeholder="Review"></textarea>
-    <button type="submit" name="reviewForm" ng-click="ReviewsCtrl">Submit</button>
+    <textarea name="review" value="" placeholder="Review" ng-model="ReviewsCtrl.review.review" required></textarea>
+    <button type="submit" name="reviewForm">Submit</button>
     <button type="button">Cancel</button>
   </form>
 </div>
