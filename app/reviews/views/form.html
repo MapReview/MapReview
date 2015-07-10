@@ -1,6 +1,7 @@
-<div class="reviewForm" ng-controller = "ReviewsController as ReviewsCtrl">
+<div class="reviewForm" ng-controller = "ReviewsController as ReviewsCtrl" >
   <h2>Add a Review</h2>
-  <form name="reviewForm" ng-submit="reviewForm.$valid && ReviewsCtrl.getReview(ReviewsCtrl.review)" novalidate>
+
+  <form name="reviewForm" novalidate>
     <div class="titleRating">
       <input type="text" name="title" value="" placeholder="Title" ng-model="ReviewsCtrl.review.title" required>
       <label for="rating">Rating </label>
@@ -14,7 +15,7 @@
       </select>
     </div>
     <textarea name="review" value="" placeholder="Review" ng-model="ReviewsCtrl.review.review" required></textarea>
-    <button type="submit" name="reviewForm">Submit</button>
+    <button type="submit" name="reviewForm" ng-click="ReviewsCtrl.getReview(map.markers[0].coords.latitude, map.markers[0].coords.longitude, ReviewsCtrl.review)">Submit</button>
     <button type="button">Cancel</button>
   </form>
 </div>

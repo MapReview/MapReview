@@ -25,8 +25,11 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div ng-controller="ReviewsController as ReviewsCtrl" ng-include="'../../reviews/views/review.html'" ng-repeat="r in ReviewsCtrl.reviews"></div>
+        <div ng-controller="MapController" class="col-sm-4 reviews">
+          <div ng-controller="ReviewsController as ReviewsCtrl" ng-include="'../../reviews/views/review.html'"></div>
+        </div>
+        <div ng-controller="MapController" class="col-sm-4 hide reviewForm">
+          <div ng-controller="ReviewsController as ReviewsCtrl" ng-include="'../../reviews/views/form.html'"></div>
         </div>
       </div>
     </div>
