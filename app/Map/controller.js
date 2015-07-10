@@ -42,6 +42,32 @@
             }
           }
         }
+        $scope.windowOptions = {
+          visible: false
+        };
+        $scope.onClick = function() {
+          $scope.windowOptions.visible = !$scope.windowOptions.visible;
+        };
+        $scope.closeClick = function() {
+          $scope.windowOptions.visible = false;
+        };
+        $scope.title = "The Iron Yard!";
+
+        var events = {
+          places_changed: function (searchBox) {}
+        }
+        $scope.searchbox = {
+          template:'searchbox.tpl.html',
+          events:events
+        };
+        var api;
+        uiGmapGoogleMapApi.then(function(googleMaps) {
+          api = googleMaps;
+        });
+
+        uiGmapGoogleMapApi.then(function(maps) {
+
+        });
       })
 
                   //***** Custom Map Buttons *****//
@@ -55,30 +81,5 @@
     })
 
 
-  $scope.windowOptions = {
-  visible: false
-  };
-  $scope.onClick = function() {
-  $scope.windowOptions.visible = !$scope.windowOptions.visible;
-  };
-  $scope.closeClick = function() {
-  $scope.windowOptions.visible = false;
-  };
-  $scope.title = "The Iron Yard!";
 
-  var events = {
-  places_changed: function (searchBox) {}
-  }
-  $scope.searchbox = {
-    template:'searchbox.tpl.html',
-    events:events
-  };
-  var api;
-  uiGmapGoogleMapApi.then(function(googleMaps) {
-  api = googleMaps;
-  });
-
-  uiGmapGoogleMapApi.then(function(maps) {
-
-  });
 })();
