@@ -19,15 +19,13 @@
                       <div><a href="http://theironyard.com/">{{title}}</a></div>
                         </ui-gmap-window>
                    </ui-gmap-marker>
-                   <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
-               <ui-gmap-map-control template="control.tpl.html" position="top-right" controller="controlCtrl" index="-1"></ui-gmap-map-control>
+                   <ui-gmap-search-box template="searchbox.template" events="searchbox.events" position="BOTTOM_RIGHT"></ui-gmap-search-box>
                </ui-gmap-google-map>
             </div>
           </div>
         </div>
         <div class="col-sm-4">
-          <div ng-controller="ReviewsController as ReviewsCtrl" ng-include="'../../reviews/views/review.html'" ng-repeat="r in ReviewsCtrl.reviews"></div>
-        </div>
+        <div ng-controller="ReviewsController as ReviewsCtrl" ng-include="'../../reviews/views/review.html'" ng-repeat="r in ReviewsCtrl.reviews"></div>        </div>
       </div>
     </div>
   </div>
