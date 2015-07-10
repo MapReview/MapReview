@@ -201,6 +201,13 @@ a {
 .reviewRightAlign {
   text-align: right; }
 
+.container {
+  width: 85%; }
+
+.reviewSidebar {
+  height: 500px;
+  overflow: scroll; }
+
 .hide {
   display: none; }
 
@@ -287,7 +294,7 @@ a {
   background-color: #125acd; }
 
 .angular-google-map-container {
-  height: 400px; }
+  height: 500px; }
 
 /*********************
 * Animations
