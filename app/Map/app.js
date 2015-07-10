@@ -7,7 +7,7 @@
     ])
     .config(function(uiGmapGoogleMapApiProvider, $routeProvider) {
           uiGmapGoogleMapApiProvider.configure({
-          key: 'AIzaSyAEx21qDaiRPmhShfVhsUjcz0varjmAvuo',
+          key: 'AIzaSyBjn_JnmB5-anlcP2jenrS702gZQ-ck7y8',
           v: '3.17',
           libraries: 'places,weather,geometry,visualization'
       })
@@ -20,12 +20,4 @@
           redirectTo: '/404'
         });
       })
-      $routeProvider
-        .when('/', {
-          templateUrl: 'views/map.html',
-          controller: 'MapController'
-        })
-        .otherwise({
-          redirectTo: '/404'
-        });
 })();

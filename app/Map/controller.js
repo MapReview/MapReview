@@ -60,9 +60,7 @@
                   api = googleMaps;
                   });
 
-
                   uiGmapGoogleMapApi.then(function(maps) {
-
 
                     });
 
