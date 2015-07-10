@@ -53,10 +53,6 @@
           $scope.windowOptions.visible = false;
         };
         $scope.title = "The Iron Yard!";
-        var events = {
-          places_changed: function (searchBox) {}
-        };
-        $scope.searchbox = { template:'searchbox.tpl.html', events:events};
         var api;
         uiGmapGoogleMapApi.then(function(googleMaps) {
           api = googleMaps;
