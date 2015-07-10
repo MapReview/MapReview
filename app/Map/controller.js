@@ -6,7 +6,6 @@
                   // Do stuff with $scope.
 
                       $scope.map = {
-
                           center: {
                               latitude: 42.3349940452867,
                               longitude: -71.0353168884369
@@ -76,7 +75,7 @@
 
                     });
 
-                  })
+
 
 
                   //***** Custom Map Buttons *****//
@@ -89,5 +88,6 @@
                   alert('We can make this do something');
         };
     });
+
 
 })();
