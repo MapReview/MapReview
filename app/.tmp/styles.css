@@ -211,6 +211,9 @@ a {
 .hide {
   display: none; }
 
+#welcome {
+  float: right; }
+
 /*********************
 * Social Buttons
 *********************/
