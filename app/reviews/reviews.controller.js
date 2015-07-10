@@ -28,6 +28,7 @@
         element.addClass('hide');
         var secondElement = angular.element(document.querySelector('.reviews'));
         secondElement.removeClass('hide');
+      }
 
       vm.deleteReview = function(id){
         ReviewsService.deleteReview(id);
