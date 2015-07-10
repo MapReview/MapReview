@@ -4,15 +4,9 @@
     .module('map')
     .controller('MapController', function($scope, uiGmapGoogleMapApi) {
                   // Do stuff with $scope.
-<<<<<<< HEAD
-
 
                       $scope.map = {
-=======
-                  angular.extend($scope, {
-                      map: {
 
->>>>>>> 40e8cda21ffd5d28ab1181e7a3576aa171eec363
                           center: {
                               latitude: 42.3349940452867,
                               longitude: -71.0353168884369
@@ -49,11 +43,10 @@
                                 $scope.map.maxZoom(map)
                             }
                       }
-<<<<<<< HEAD
-=======
+
                     }
                   })
->>>>>>> 40e8cda21ffd5d28ab1181e7a3576aa171eec363
+
 
 
                   $scope.windowOptions = {
@@ -85,7 +78,7 @@
 
                   })
 
-<<<<<<< HEAD
+
                   //***** Custom Map Buttons *****//
 
                   .controller('controlCtrl', function ($scope) {
@@ -96,6 +89,5 @@
                   alert('We can make this do something');
         };
     });
-=======
->>>>>>> 40e8cda21ffd5d28ab1181e7a3576aa171eec363
+
 })();
