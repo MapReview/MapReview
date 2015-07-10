@@ -42,7 +42,7 @@
             },
             zoom_changed: function (map, eventName, originalEventArgs) {
                 $scope.map.maxZoom(map)
-            },
+            }
           }
         }
         $scope.windowOptions = {
