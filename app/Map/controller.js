@@ -33,10 +33,11 @@
                 };
 
                 $scope.map.markers.push(marker);
-                $scope.map.coords.pop($scope.map.marker);
                 $scope.$apply();
-                console.log($scope.map.coords);
-                return marker.coords;
+                var element = angular.element(document.querySelector('.reviews'));
+                element.addClass('hide');
+                var secondElement = angular.element(document.querySelector('.reviewForm'));
+                secondElement.removeClass('hide');
             },
             zoom_changed: function (map, eventName, originalEventArgs) {
                 $scope.map.maxZoom(map)
