@@ -34,6 +34,7 @@
 
                 $scope.map.markers.push(marker);
                 $scope.$apply();
+                console.log($scope.map.markers);
                 var element = angular.element(document.querySelector('.reviews'));
                 element.addClass('hide');
                 var secondElement = angular.element(document.querySelector('.reviewForm'));
