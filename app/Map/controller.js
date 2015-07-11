@@ -2,7 +2,7 @@
 
   angular
     .module('map')
-    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService) {
+    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService, $auth) {
       // Do stuff with $scope.
       $scope.map = {
           center: {
@@ -64,6 +64,10 @@
           });
         }
 
+        $scope.isAuthenticated = function() {
+          return $auth.isAuthenticated();
+        };
+
         $scope.onClick = function() {
           $scope.windowOptions.visible = !$scope.windowOptions.visible;
         };
@@ -86,13 +90,6 @@
                 "longitude": place[0].geometry.location.lng()
             },
             "zoom": 18
-        };
-        $scope.marker = {
-            id: 0,
-            coords: {
-                latitude: place[0].geometry.location.lat(),
-                longitude: place[0].geometry.location.lng()
-            }
         };
     }
 };
