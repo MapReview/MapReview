@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('reviews')
-    .controller('ReviewsController', function($scope, ReviewsService, $auth){
+    .controller('ReviewsController', function($scope, ReviewsService, $auth, $location){
 
       var vm = this;
 
@@ -43,6 +43,14 @@
 
       vm.deleteReview = function(id){
         ReviewsService.deleteReview(id);
+      }
+
+      vm.isLocationReviews = function() {
+        return $location.path() === '/myReviews'
+      }
+
+      vm.isLocationHome = function() {
+        return $location.path() === '/'
       }
 
       var watchCallback = function () {
