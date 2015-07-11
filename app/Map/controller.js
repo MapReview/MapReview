@@ -172,16 +172,4 @@
 
       })
 
-                  //***** Custom Map Buttons *****//
-    // .controller('controlCtrl', function ($scope) {
-    //   $scope.controlText = 'Fav1';
-    //   $scope.danger = false;
-    //   $scope.controlClick = function () {
-    //     $scope.danger = !$scope.danger;
-    //     alert('We can make this do something');
-    //   };
-    // })
-
-
-
 })();
