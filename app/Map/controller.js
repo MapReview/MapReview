@@ -93,7 +93,7 @@
                 latitude: place[0].geometry.location.lat(),
                 longitude: place[0].geometry.location.lng()
             },
-            zoom: 8,
+            zoom: 7,
             coords: [],
             markers: [],
             maxZoom: function(map) {
