@@ -202,10 +202,13 @@ a {
 .reviewRightAlign {
   text-align: right; }
 
-.container {
+.logInContainer {
   width: 45%;
   background-color: white;
   margin-top: 100px; }
+
+.homeMap {
+  width: 90%; }
 
 .reviewSidebar {
   height: 500px;
