@@ -2,7 +2,7 @@
 
   angular
     .module('map')
-    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService) {
+    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService, $auth) {
       // Do stuff with $scope.
       $scope.map = {
           center: {
@@ -63,6 +63,10 @@
             }
           });
         }
+
+        $scope.isAuthenticated = function() {
+          return $auth.isAuthenticated();
+        };
 
         $scope.onClick = function() {
           $scope.windowOptions.visible = !$scope.windowOptions.visible;
