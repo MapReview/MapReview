@@ -19,12 +19,14 @@
       });
 
       vm.getReview = function(coords, review){
+        var user = review.user;
         if(vm.review.rating === undefined){
           vm.review.rating = '5';
         };
         vm.review.coords = coords;
         ReviewsService.sendReview(review);
         vm.review = {};
+        vm.review.user = user;
         var element = angular.element(document.querySelector('.reviewForm'));
         element.addClass('hide');
         var secondElement = angular.element(document.querySelector('.reviews'));
