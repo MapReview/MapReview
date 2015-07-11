@@ -3,6 +3,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   background: #e4e7ec;
+  height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -292,6 +293,20 @@ a {
 .oopsButton {
   margin-top: 25px;
 }
+
+.video {
+  position: fixed;
+  top: 50%; left: 50%;
+  z-index: 1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}
+
+
 
 /*********************
 * Social Buttons
