@@ -31,7 +31,7 @@
                     options: {
                       animation: api.Animation.DROP,
                     }
-                };
+                  };
 
                 $scope.map.markers.unshift(marker);
                 $scope.$apply();
@@ -44,9 +44,16 @@
             zoom_changed: function (map, eventName, originalEventArgs) {
                 $scope.map.maxZoom(map)
             }
+
           }
         }
 
+        $scope.clickMarker = function(marker){
+          MapService.getSingleReview().success(function(reviews){
+            console.log(_.findWhere(reviews, {'latitude': marker.coords.latitude}));
+            return _.findWhere(reviews, {'latitude': marker.coords.latitude});
+          });
+        }
 
         $scope.windowOptions = {
           visible: false
@@ -171,6 +178,8 @@
         $scope.$on('review:created', watchCallback);
 
       })
+
+
 
                   //***** Custom Map Buttons *****//
     // .controller('controlCtrl', function ($scope) {
