@@ -3,6 +3,6 @@
   <p class="reviewRightAlign">- joeuserbae1994</p>
   <p>{{r.review}}</p>
   <p class="reviewRightAlign">{{r.rating}} / 5</p>
-  <span><button class="btn btn-warning">Edit</button>
-  <button ng-click="" class="btn btn-danger">Delete</button></span>
+  <span><button class="btn btn-warning" ng-click="ReviewsCtrl.openEdit(r.title, r.review, r.rating, r._id)">Edit</button>
+  <button class="btn btn-danger" ng-click="ReviewsCtrl.deleteReview(r._id)">Delete</button></span>
 </div>

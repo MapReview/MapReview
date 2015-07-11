@@ -27,7 +27,7 @@
         })
       }
 
-      var editReview = function(review, id){
+      var submitEditReview = function(review, id){
         $http.put(reviewsUrl + "/" + id, review).success(function(response){
           $rootScope.$broadcast('review:edited');
         }).error(function(error){
@@ -39,7 +39,7 @@
         getReviews: getReviews,
         sendReview: sendReview,
         deleteReview: deleteReview,
-        editReview: editReview
+        submitEditReview: submitEditReview
       };
 
     });
