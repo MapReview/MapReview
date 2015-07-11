@@ -9,7 +9,7 @@
       </select>
     </div>
     <textarea name="review" value="" placeholder="Review" ng-model="ReviewsCtrl.review.review" required></textarea>
-    <input ng-model="user.displayName"/>
+    <input class="hide" ng-value="ReviewsCtrl.review.user = user.displayName" ng-model="ReviewsCtrl.review.user"/>
     <button type="submit" name="reviewForm" ng-click="ReviewsCtrl.getReview(map.markers[0], ReviewsCtrl.review)">Submit</button>
     <button type="button" ng-click="ReviewsCtrl.cancelPost(); reloadMap()">Cancel</button>
   </form>
