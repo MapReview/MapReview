@@ -97,3 +97,13 @@ angular.module('profile')
     $scope.getProfile();
 
   });
+
+  angular.module('profile')
+    .controller('ProgressDemoCtrl', function ($scope) {
+      $scope.max = 200;
+    });
+
+  angular.module('profile')
+    .controller('CollapseDemoCtrl', function ($scope) {
+    $scope.isCollapsed = false;
+  });
