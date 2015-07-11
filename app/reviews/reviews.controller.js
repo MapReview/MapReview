@@ -2,9 +2,13 @@
   'use strict';
   angular
     .module('reviews')
-    .controller('ReviewsController', function($scope, ReviewsService){
+    .controller('ReviewsController', function($scope, ReviewsService, $auth){
 
       var vm = this;
+
+      vm.isAuthenticated = function() {
+        return $auth.isAuthenticated();
+      };
 
       vm.review = {};
 
