@@ -31,8 +31,12 @@
                     options: {
                       animation: api.Animation.DROP,
                     }
+<<<<<<< HEAD
                   };
 
+=======
+                };
+>>>>>>> 79abd6a100e4b11d3c6cc106424f3bdac43bef7a
                 $scope.map.markers.unshift(marker);
                 $scope.$apply();
                 console.log($scope.map.markers);
@@ -84,7 +88,7 @@
         $scope.closeClick = function() {
           $scope.windowOptions.visible = false;
         };
-        $scope.title = "The Iron Yard!";
+
 
 
         var events = {
@@ -101,7 +105,7 @@
                 latitude: place[0].geometry.location.lat(),
                 longitude: place[0].geometry.location.lng()
             },
-            zoom: 8,
+            zoom: 7,
             coords: [],
             markers: [],
             maxZoom: function(map) {
@@ -138,6 +142,8 @@
           };
           MapService.getMarkers().then(function(marker) {
             for(var i = 0; i < marker.length; i++) {
+              console.log(marker[i].title);
+              $scope.title = marker[i].title;
               $scope.map.markers.push(marker[i].coords);
             }
           });
@@ -179,6 +185,7 @@
 
       })
 
+<<<<<<< HEAD
 
 
                   //***** Custom Map Buttons *****//
@@ -193,4 +200,6 @@
 
 
 
+=======
+>>>>>>> 79abd6a100e4b11d3c6cc106424f3bdac43bef7a
 })();
