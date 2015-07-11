@@ -32,7 +32,6 @@
                       animation: api.Animation.DROP,
                     }
                 };
-
                 $scope.map.markers.unshift(marker);
                 $scope.$apply();
                 console.log($scope.map.markers);
@@ -46,7 +45,6 @@
             }
           }
         }
-
 
         $scope.windowOptions = {
           visible: false
@@ -77,7 +75,7 @@
         $scope.closeClick = function() {
           $scope.windowOptions.visible = false;
         };
-        $scope.title = "The Iron Yard!";
+
 
 
         var events = {
@@ -131,6 +129,8 @@
           };
           MapService.getMarkers().then(function(marker) {
             for(var i = 0; i < marker.length; i++) {
+              console.log(marker[i].title);
+              $scope.title = marker[i].title;
               $scope.map.markers.push(marker[i].coords);
             }
           });
