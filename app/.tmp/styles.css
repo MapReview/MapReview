@@ -212,7 +212,8 @@ a {
 
 .reviewSidebar {
   height: 500px;
-  overflow: scroll; }
+  overflow: scroll;
+  clear: right; }
 
 .hide {
   display: none; }
@@ -256,6 +257,10 @@ a {
   z-index: -100;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
+
+.filterSearch {
+  float: right;
+  width: 50%; }
 
 /*********************
 * Social Buttons

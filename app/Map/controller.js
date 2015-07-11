@@ -33,7 +33,6 @@
                       animation: api.Animation.DROP,
                     }
                 };
-
                 $scope.map.markers.unshift(marker);
                 $scope.$apply();
                 console.log($scope.map.markers);
@@ -48,6 +47,9 @@
           }
         }
 
+        $scope.windowOptions = {
+          visible: false
+        };
 
         MapService.getMarkers().then(function(marker) {
           for(var i = 0; i < marker.length; i++) {
@@ -68,6 +70,12 @@
           return $auth.isAuthenticated();
         };
 
+        $scope.onClick = function() {
+          $scope.windowOptions.visible = !$scope.windowOptions.visible;
+        };
+        $scope.closeClick = function() {
+          $scope.windowOptions.visible = false;
+        };
 
         var events = {
 
@@ -83,7 +91,7 @@
                 latitude: place[0].geometry.location.lat(),
                 longitude: place[0].geometry.location.lng()
             },
-            zoom: 8,
+            zoom: 7,
             coords: [],
             markers: [],
             maxZoom: function(map) {
@@ -120,6 +128,8 @@
           };
           MapService.getMarkers().then(function(marker) {
             for(var i = 0; i < marker.length; i++) {
+              console.log(marker[i].title);
+              $scope.title = marker[i].title;
               $scope.map.markers.push(marker[i].coords);
             }
           });
@@ -160,17 +170,5 @@
         $scope.$on('review:created', watchCallback);
 
       })
-
-                  //***** Custom Map Buttons *****//
-    // .controller('controlCtrl', function ($scope) {
-    //   $scope.controlText = 'Fav1';
-    //   $scope.danger = false;
-    //   $scope.controlClick = function () {
-    //     $scope.danger = !$scope.danger;
-    //     alert('We can make this do something');
-    //   };
-    // })
-
-
 
 })();
