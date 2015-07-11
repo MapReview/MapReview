@@ -1,9 +1,8 @@
 <div class="singleReview" ng-repeat="r in ReviewsCtrl.reviews">
   <h2>{{r.title}}</h2>
-  <p ng-controller="ProfileController">by <strong>{{ user.displayName }}</strong></p>
+  <p ng-controller="ProfileController">by <strong>{{ r.user }}</strong></p>
   <p>{{r.review}}</p>
   <p class="reviewRightAlign">{{r.rating}} / 5</p>
   <p>{{r.coords.id | date:'medium'}}</p>
-  <span><button class="btn btn-warning" ng-click="ReviewsCtrl.openEdit(r.title, r.review, r.rating, r._id)">Edit</button>
-  <button class="btn btn-danger" ng-click="ReviewsCtrl.deleteReview(r._id)">Delete</button></span>
+  <button class="btn btn-danger" ng-click="ReviewsCtrl.deleteReview(r._id)">Delete</button>
 </div>
