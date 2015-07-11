@@ -8,7 +8,8 @@ angular.module('MyApp', [
   'reviews',
   'uiGmapgoogle-maps',
   'map',
-  'myReviews'
+  'myReviews',
+  'ui.bootstrap'
 ])
 
 .config(function($routeProvider) {

@@ -11,7 +11,6 @@
               longitude: -97.0167
           },
           zoom: 4,
-          showTraffic: false,
           coords: [],
           markers: [],
           maxZoom: function(map) {
@@ -46,10 +45,6 @@
           }
         }
 
-        $scope.windowOptions = {
-          visible: false
-        };
-
         MapService.getMarkers().then(function(marker) {
           for(var i = 0; i < marker.length; i++) {
             $scope.map.markers.push(marker[i].coords);
@@ -68,15 +63,6 @@
         $scope.isAuthenticated = function() {
           return $auth.isAuthenticated();
         };
-
-        $scope.onClick = function() {
-          $scope.windowOptions.visible = !$scope.windowOptions.visible;
-        };
-        $scope.closeClick = function() {
-          $scope.windowOptions.visible = false;
-        };
-
-
 
         var events = {
 
@@ -170,6 +156,10 @@
 
         $scope.$on('review:created', watchCallback);
 
+      })
+
+      .controller('CollapseDemoCtrl', function ($scope) {
+        $scope.isCollapsed = false;
       })
 
 })();
