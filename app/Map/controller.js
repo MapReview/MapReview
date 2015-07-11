@@ -13,7 +13,8 @@
           zoom: 4,
           showTraffic: false,
           coords: [],
-          markers: [],
+          markers: [
+          ],
           maxZoom: function(map) {
             var maxZoom = 13;
             if (map.getZoom() > maxZoom) { map.setZoom(maxZoom) };
@@ -48,10 +49,6 @@
         }
 
 
-        $scope.windowOptions = {
-          visible: false
-        };
-
         MapService.getMarkers().then(function(marker) {
           for(var i = 0; i < marker.length; i++) {
             $scope.map.markers.push(marker[i].coords);
@@ -70,14 +67,6 @@
         $scope.isAuthenticated = function() {
           return $auth.isAuthenticated();
         };
-
-        $scope.onClick = function() {
-          $scope.windowOptions.visible = !$scope.windowOptions.visible;
-        };
-        $scope.closeClick = function() {
-          $scope.windowOptions.visible = false;
-        };
-        $scope.title = "The Iron Yard!";
 
 
         var events = {
