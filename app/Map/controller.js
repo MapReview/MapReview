@@ -10,7 +10,7 @@
               longitude: -97.0167
           },
           zoom: 4,
-          showTraffic: true,
+          showTraffic: false,
           coords: [],
           markers: [],
           maxZoom: function(map) {
