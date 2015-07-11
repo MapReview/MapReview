@@ -38,8 +38,22 @@
         ReviewsService.deleteReview(id);
       }
 
-      vm.editReview = function(review, id){
-        ReviewsService.editReview(review, id);
+      vm.openEdit = function(ti, re, ra){
+        console.log(ti, re, ra);
+        vm.review = {title: ti, review: re, rating: ra};
+
+        console.log(vm.review);
+
+
+        var element = angular.element(document.querySelector('.reviewForm'));
+        element.removeClass('hide');
+        var secondElement = angular.element(document.querySelector('.reviews'));
+        secondElement.addClass('hide');
+
+      }
+
+      vm.submitEditReview = function(review, id){
+        ReviewsService.submitEditReview(review, id);
       }
 
       var watchCallback = function () {
