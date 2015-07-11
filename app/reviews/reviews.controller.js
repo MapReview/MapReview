@@ -6,6 +6,8 @@
 
       var vm = this;
 
+      vm.ratingOptions = [1, 2, 3, 4, 5];
+
       vm.isAuthenticated = function() {
         return $auth.isAuthenticated();
       };
@@ -17,6 +19,9 @@
       });
 
       vm.getReview = function(coords, review){
+        if(vm.review.rating === undefined){
+          vm.review.rating = '5';
+        };
         vm.review.coords = coords;
         ReviewsService.sendReview(review);
         vm.review = {};
@@ -36,24 +41,6 @@
 
       vm.deleteReview = function(id){
         ReviewsService.deleteReview(id);
-      }
-
-      vm.openEdit = function(ti, re, ra){
-        console.log(ti, re, ra);
-        vm.review = {title: ti, review: re, rating: ra};
-
-        console.log(vm.review);
-
-
-        var element = angular.element(document.querySelector('.reviewForm'));
-        element.removeClass('hide');
-        var secondElement = angular.element(document.querySelector('.reviews'));
-        secondElement.addClass('hide');
-
-      }
-
-      vm.submitEditReview = function(review, id){
-        ReviewsService.submitEditReview(review, id);
       }
 
       var watchCallback = function () {
