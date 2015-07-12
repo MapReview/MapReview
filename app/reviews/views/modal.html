@@ -1,25 +1,13 @@
-<div ng-controller="ModalDemoCtrl">
-    <script type="text/ng-template" id="modal.html" ng-controller="MapsController">
-        <div class="modal-header">
-            <h3 class="modal-title"></h3>
-        </div>
-        <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    <a ng-click="selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ selected.item }}</b>
-        </div>
+<div ng-controller="MapController">
+    <div type="text/ng-template" id="modal.html">
+    <h2>{{individMarker.title}}</h2>
+    <p>by <strong>{{ individMarker.user }}</strong></p>
+    <p>{{individMarker.review}}</p>
+    <p class="reviewRightAlign">{{individMarker.rating}} / 5</p>
+    <p>{{individMarker.coords.id | date:'medium'}}</p>
+    <button class="btn btn-danger" ng-if="r.user === user.displayName" ng-click="ReviewsCtrl.deleteReview(r._id)">Delete</button>
         <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-warning" ng-click="close()">Cancel</button>
         </div>
-    </script>
-
-    <button class="btn btn-default" ng-click="open()">Open me!</button>
-    <button class="btn btn-default" ng-click="open('lg')">Large modal</button>
-    <button class="btn btn-default" ng-click="open('sm')">Small modal</button>
-    <button class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+    </divt>
 </div>

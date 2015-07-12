@@ -63,34 +63,6 @@
       $scope.$on('review:created', watchCallback);
       $scope.$on('review:deleted', watchCallback);
       $scope.$on('review:edited', watchCallback);
-    })
-    .controller('ReviewModal', function($scope, $modal, $log) {
-
-      $scope.animationsEnabled = true;
-
-      $scope.open = function (size) {
-
-      var modalInstance = $modal.open({
-        animation: $scope.animationsEnabled,
-        templateUrl: 'modal.html',
-        controller: 'ModalInstanceCtrl',
-        size: size
-      });
-
-      modalInstance.result.then(function (selectedItem) {
-        $scope.selected = selectedItem;
-      }, function () {
-        $log.info('Modal dismissed at: ' + new Date());
-      });
-    };
-
-    })
-    .controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
-
-      $scope.close = function () {
-        $modalInstance.close($scope.selected.item);
-      };
-
     });
 
 })();

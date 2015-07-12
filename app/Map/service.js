@@ -3,7 +3,7 @@
   angular
         .module('map')
         .factory('MapService', function($http) {
-          var reviewsUrl = "http://tiy-fee-rest.herokuapp.com/collections/MapReview1"
+          var reviewsUrl = "http://tiy-fee-rest.herokuapp.com/collections/MapReview2"
 
           var getMarkers = function() {
             return $http.get(reviewsUrl).then(function(reviews){

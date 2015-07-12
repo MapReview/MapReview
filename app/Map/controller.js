@@ -2,7 +2,7 @@
 
   angular
     .module('map')
-    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService, $auth) {
+    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService, $auth, $modal, $log) {
       // Do stuff with $scope.
 
       $scope.map = {
@@ -32,12 +32,7 @@
                     options: {
                       animation: api.Animation.DROP,
                     }
-<<<<<<< HEAD
-                };
-
-=======
                   };
->>>>>>> 429aa82bd7a0d19455e882714c86056c3686a29e
                 $scope.map.markers.unshift(marker);
                 $scope.$apply();
                 console.log($scope.map.markers);
@@ -56,6 +51,9 @@
         $scope.clickMarker = function(marker){
           MapService.getSingleReview().success(function(reviews){
             console.log(_.findWhere(reviews, {'latitude': marker.coords.latitude}));
+            $scope.individMarker = _.findWhere(reviews, {'latitude': marker.coords.latitude});
+            $scope.open('lg');
+            console.log($scope.individMarker);
             return _.findWhere(reviews, {'latitude': marker.coords.latitude});
           });
         }
@@ -182,8 +180,6 @@
 
         $scope.$on('review:created', watchCallback);
 
-      })
-
 
                   //***** Custom Map Buttons *****//
     // .controller('controlCtrl', function ($scope) {
@@ -195,5 +191,34 @@
     //   };
     // })
 
+      $scope.animationsEnabled = true;
+
+      $scope.open = function (size) {
+
+      console.log('hi');
+
+      var modalInstance = $modal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: '../reviews/views/modal.html',
+        controller: 'ModalInstanceCtrl',
+        size: size
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+        $scope.selected = selectedItem;
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    };
+
+  })
+
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance) {
+
+      $scope.close = function () {
+        $modalInstance.close($scope.selected);
+      };
+
+    });
 
 })();

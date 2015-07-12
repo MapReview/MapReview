@@ -3,7 +3,7 @@
   angular
     .module('reviews')
     .factory('ReviewsService', function($http, $rootScope) {
-      var reviewsUrl = "http://tiy-fee-rest.herokuapp.com/collections/MapReview1"
+      var reviewsUrl = "http://tiy-fee-rest.herokuapp.com/collections/MapReview2"
 
       var getReviews = function() {
         return $http.get(reviewsUrl).then(function(reviews){
@@ -39,7 +39,7 @@
         getReviews: getReviews,
         sendReview: sendReview,
         deleteReview: deleteReview,
-        submitEditReview: submitEditReview        
+        submitEditReview: submitEditReview
       };
 
     });
