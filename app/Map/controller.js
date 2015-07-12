@@ -32,8 +32,12 @@
                     options: {
                       animation: api.Animation.DROP,
                     }
+<<<<<<< HEAD
                 };
 
+=======
+                  };
+>>>>>>> 429aa82bd7a0d19455e882714c86056c3686a29e
                 $scope.map.markers.unshift(marker);
                 $scope.$apply();
                 console.log($scope.map.markers);
