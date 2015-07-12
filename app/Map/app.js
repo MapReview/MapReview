@@ -3,7 +3,9 @@
 
   angular
     .module('map', [
-      'ngRoute'
+      'ngRoute',
+      'angularModalService',
+      'ui.bootstrap'
     ])
     .config(function(uiGmapGoogleMapApiProvider, $routeProvider) {
           uiGmapGoogleMapApiProvider.configure({

@@ -12,7 +12,10 @@
               </script>
                <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" events="map.events">
                  <ui-gmap-search-box template="searchbox.template" events="searchbox.events" position="BOTTOM_CENTER"></ui-gmap-search-box>
-                   <ui-gmap-marker ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id" options="m.options">
+                   <ui-gmap-marker click="clickMarker(m)" ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id" options="m.options">
+                     <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+                      <div><a href="http://theironyard.com/">{{title}}</a></div>
+                        </ui-gmap-window>
                    </ui-gmap-marker>
 
                </ui-gmap-google-map>

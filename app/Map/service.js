@@ -3,17 +3,23 @@
   angular
         .module('map')
         .factory('MapService', function($http) {
-          var reviewsUrl = "http://tiy-fee-rest.herokuapp.com/collections/MapReview1"
+          var reviewsUrl = "http://tiy-fee-rest.herokuapp.com/collections/MapReview2"
 
           var getMarkers = function() {
             return $http.get(reviewsUrl).then(function(reviews){
-              console.log(reviews.data);
               return reviews.data;
             })
           };
 
+          var getSingleReview = function(){
+            return $http.get(reviewsUrl).success(function(reviews){
+              return reviews;
+            });
+          };
+
           return {
-            getMarkers: getMarkers
+            getMarkers: getMarkers,
+            getSingleReview: getSingleReview
           }
     });
 })();
