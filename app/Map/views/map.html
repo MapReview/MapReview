@@ -1,7 +1,7 @@
 <div id="map_canvas">
-  <div ng-app="main" >
+  <div ng-app="main">
      <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" events="map.events">
-         <ui-gmap-marker ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id" options="m.options"></ui-gmap-marker>
+         <ui-gmap-marker ng-controller="ReviewModal" ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id" options="m.options" lebelContent="m.title" ng-click="open('lg')"></ui-gmap-marker>
      </ui-gmap-google-map>
   </div>
 </div>
