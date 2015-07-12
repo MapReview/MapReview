@@ -31,12 +31,7 @@
                     options: {
                       animation: api.Animation.DROP,
                     }
-<<<<<<< HEAD
                   };
-
-=======
-                };
->>>>>>> 79abd6a100e4b11d3c6cc106424f3bdac43bef7a
                 $scope.map.markers.unshift(marker);
                 $scope.$apply();
                 console.log($scope.map.markers);
@@ -185,7 +180,6 @@
 
       })
 
-<<<<<<< HEAD
 
 
                   //***** Custom Map Buttons *****//
@@ -200,6 +194,5 @@
 
 
 
-=======
->>>>>>> 79abd6a100e4b11d3c6cc106424f3bdac43bef7a
+
 })();
