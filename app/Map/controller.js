@@ -46,17 +46,17 @@
             }
 
           }
-        }
+        };
 
         $scope.clickMarker = function(marker){
           MapService.getSingleReview().success(function(reviews){
             console.log(_.findWhere(reviews, {'latitude': marker.coords.latitude}));
             $rootScope.individMarker = _.findWhere(reviews, {'latitude': marker.coords.latitude});
             $scope.open('lg');
-            console.log($scope.individMarker);
+            $scope.individMaker = _.findWhere(reviews, {'latitude': marker.coords.latitude});
             return _.findWhere(reviews, {'latitude': marker.coords.latitude});
           });
-        }
+        };
 
         $scope.windowOptions = {
           visible: false
@@ -193,7 +193,7 @@
 
       $scope.animationsEnabled = true;
 
-      $scope.open = function (size) {
+      $scope.open = function (size, data) {
 
       console.log('hi');
 
