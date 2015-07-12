@@ -6,7 +6,7 @@
     <p>{{individMarker.rating}}/5</p>
         <div class="modal-footer">
             <button class="btn btn-success" ng-click="close()">Close</button>
-            <button ng-controller="ReviewsController as ReviewsCtrl"class="btn btn-danger" ng-if="individMarker.user === user.displayName" ng-click="ReviewsCtrl.deleteReview(r._id)">Delete</button>
+            <button ng-controller="ReviewsController as ReviewsCtrl"class="btn btn-danger" ng-if="individMarker.user === user.displayName" ng-click="ReviewsCtrl.deleteReview(individMarker._id); close()">Delete</button>
         </div>
 </div>
 </div>
