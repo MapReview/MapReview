@@ -2,7 +2,7 @@
 
   angular
     .module('map')
-    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService, $auth, $modal, $log) {
+    .controller('MapController', function($rootScope, $scope, uiGmapGoogleMapApi, MapService, $auth, $modal, $log) {
       // Do stuff with $scope.
 
       $scope.map = {
@@ -51,6 +51,7 @@
         $scope.clickMarker = function(marker){
           MapService.getSingleReview().success(function(reviews){
             console.log(_.findWhere(reviews, {'latitude': marker.coords.latitude}));
+            $rootScope.individMarker = _.findWhere(reviews, {'latitude': marker.coords.latitude});
             $scope.open('lg');
             $scope.individMaker = _.findWhere(reviews, {'latitude': marker.coords.latitude});
             return _.findWhere(reviews, {'latitude': marker.coords.latitude});
