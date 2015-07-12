@@ -8,7 +8,8 @@ angular.module('MyApp', [
   'reviews',
   'uiGmapgoogle-maps',
   'map',
-  'myReviews'
+  'myReviews',
+  'lodash'
 ])
 
 .config(function($routeProvider) {
@@ -23,3 +24,8 @@ angular.module('MyApp', [
       redirectTo: '/404'
     });
 });
+angular
+    .module('lodash', [])
+    .factory('_', function($window){
+      return $window._;
+    });
