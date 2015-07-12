@@ -32,7 +32,12 @@
                     options: {
                       animation: api.Animation.DROP,
                     }
+<<<<<<< HEAD
+                  };
+
+=======
                 };
+>>>>>>> 79abd6a100e4b11d3c6cc106424f3bdac43bef7a
                 $scope.map.markers.unshift(marker);
                 $scope.$apply();
                 console.log($scope.map.markers);
@@ -44,7 +49,15 @@
             zoom_changed: function (map, eventName, originalEventArgs) {
                 $scope.map.maxZoom(map)
             }
+
           }
+        }
+
+        $scope.clickMarker = function(marker){
+          MapService.getSingleReview().success(function(reviews){
+            console.log(_.findWhere(reviews, {'latitude': marker.coords.latitude}));
+            return _.findWhere(reviews, {'latitude': marker.coords.latitude});
+          });
         }
 
         $scope.windowOptions = {
@@ -171,4 +184,21 @@
 
       })
 
+<<<<<<< HEAD
+
+
+                  //***** Custom Map Buttons *****//
+    // .controller('controlCtrl', function ($scope) {
+    //   $scope.controlText = 'Fav1';
+    //   $scope.danger = false;
+    //   $scope.controlClick = function () {
+    //     $scope.danger = !$scope.danger;
+    //     alert('We can make this do something');
+    //   };
+    // })
+
+
+
+=======
+>>>>>>> 79abd6a100e4b11d3c6cc106424f3bdac43bef7a
 })();

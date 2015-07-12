@@ -39,7 +39,7 @@
         getReviews: getReviews,
         sendReview: sendReview,
         deleteReview: deleteReview,
-        submitEditReview: submitEditReview
+        submitEditReview: submitEditReview        
       };
 
     });

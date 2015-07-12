@@ -7,13 +7,19 @@
 
           var getMarkers = function() {
             return $http.get(reviewsUrl).then(function(reviews){
-              console.log(reviews.data);
               return reviews.data;
             })
           };
 
+          var getSingleReview = function(){
+            return $http.get(reviewsUrl).success(function(reviews){
+              return reviews;
+            });
+          };
+
           return {
-            getMarkers: getMarkers
+            getMarkers: getMarkers,
+            getSingleReview: getSingleReview
           }
     });
 })();
