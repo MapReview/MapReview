@@ -31,7 +31,7 @@ angular.module('profile')
     $scope.updateProfile = function() {
       Account.updateProfile({
         displayName: $scope.user.displayName,
-        email: $scope.user.email
+        email: $scope.user.email,
       }).then(function() {
         $alert({
           content: 'Profile has been updated',
@@ -101,6 +101,14 @@ angular.module('profile')
   angular.module('profile')
     .controller('ProgressDemoCtrl', function ($scope) {
       $scope.max = 200;
+
+    $scope.random = function() {
+    var value = Math.floor((Math.random() * 100) + 1);
+
+    $scope.dynamic = value;
+  };
+  $scope.random();
+
     });
 
   angular.module('profile')
