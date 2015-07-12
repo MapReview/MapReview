@@ -2,7 +2,8 @@
   'use strict';
   angular
     .module('reviews', [
-      'ngRoute'
+      'ngRoute',
+      'lodash'
     ])
     .config(function($routeProvider){
 

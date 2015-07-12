@@ -2,7 +2,7 @@
 
   angular
     .module('map')
-    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService, $auth) {
+    .controller('MapController', function($scope, uiGmapGoogleMapApi, MapService, $auth, $modal, $log) {
       // Do stuff with $scope.
 
       $scope.map = {
@@ -13,7 +13,8 @@
           zoom: 4,
           showTraffic: false,
           coords: [],
-          markers: [],
+          markers: [
+          ],
           maxZoom: function(map) {
             var maxZoom = 13;
             if (map.getZoom() > maxZoom) { map.setZoom(maxZoom) };
@@ -31,8 +32,7 @@
                     options: {
                       animation: api.Animation.DROP,
                     }
-                };
-
+                  };
                 $scope.map.markers.unshift(marker);
                 $scope.$apply();
                 console.log($scope.map.markers);
@@ -44,9 +44,19 @@
             zoom_changed: function (map, eventName, originalEventArgs) {
                 $scope.map.maxZoom(map)
             }
+
           }
         }
 
+        $scope.clickMarker = function(marker){
+          MapService.getSingleReview().success(function(reviews){
+            console.log(_.findWhere(reviews, {'latitude': marker.coords.latitude}));
+            $scope.individMarker = _.findWhere(reviews, {'latitude': marker.coords.latitude});
+            $scope.open('lg');
+            console.log($scope.individMarker);
+            return _.findWhere(reviews, {'latitude': marker.coords.latitude});
+          });
+        }
 
         $scope.windowOptions = {
           visible: false
@@ -77,8 +87,6 @@
         $scope.closeClick = function() {
           $scope.windowOptions.visible = false;
         };
-        $scope.title = "The Iron Yard!";
-
 
         var events = {
 
@@ -94,7 +102,7 @@
                 latitude: place[0].geometry.location.lat(),
                 longitude: place[0].geometry.location.lng()
             },
-            zoom: 8,
+            zoom: 7,
             coords: [],
             markers: [],
             maxZoom: function(map) {
@@ -131,6 +139,8 @@
           };
           MapService.getMarkers().then(function(marker) {
             for(var i = 0; i < marker.length; i++) {
+              console.log(marker[i].title);
+              $scope.title = marker[i].title;
               $scope.map.markers.push(marker[i].coords);
             }
           });
@@ -170,7 +180,6 @@
 
         $scope.$on('review:created', watchCallback);
 
-      })
 
                   //***** Custom Map Buttons *****//
     // .controller('controlCtrl', function ($scope) {
@@ -182,6 +191,34 @@
     //   };
     // })
 
+      $scope.animationsEnabled = true;
 
+      $scope.open = function (size) {
+
+      console.log('hi');
+
+      var modalInstance = $modal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: '../reviews/views/modal.html',
+        controller: 'ModalInstanceCtrl',
+        size: size
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+        $scope.selected = selectedItem;
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    };
+
+  })
+
+    .controller('ModalInstanceCtrl', function ($scope, $modalInstance) {
+
+      $scope.close = function () {
+        $modalInstance.close($scope.selected);
+      };
+
+    });
 
 })();

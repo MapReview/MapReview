@@ -1,0 +1,13 @@
+<div ng-controller="MapController">
+    <div type="text/ng-template" id="modal.html">
+    <h2>{{individMarker.title}}</h2>
+    <p>by <strong>{{ individMarker.user }}</strong></p>
+    <p>{{individMarker.review}}</p>
+    <p class="reviewRightAlign">{{individMarker.rating}} / 5</p>
+    <p>{{individMarker.coords.id | date:'medium'}}</p>
+    <button class="btn btn-danger" ng-if="r.user === user.displayName" ng-click="ReviewsCtrl.deleteReview(r._id)">Delete</button>
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="close()">Cancel</button>
+        </div>
+    </divt>
+</div>

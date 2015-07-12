@@ -24,6 +24,7 @@
           vm.review.rating = '5';
         };
         vm.review.coords = coords;
+        vm.review.latitude = coords.coords.latitude;
         ReviewsService.sendReview(review);
         vm.review = {};
         vm.review.user = user;
