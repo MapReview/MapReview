@@ -97,3 +97,9 @@ angular.module('profile')
     $scope.getProfile();
 
   });
+
+
+  angular.module('profile')
+    .controller('CollapseDemoCtrl', function ($scope) {
+    $scope.isCollapsed = false;
+  });
