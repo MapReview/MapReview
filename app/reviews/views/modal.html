@@ -1,4 +1,5 @@
-<div ng-controller="MapController">
+<h1 ng-show="!individMarker.title">Finish the review!</h1>
+<div ng-controller="MapController" ng-show="individMarker.title">
 <div ng-controller="ProfileController">
     <h2>{{individMarker.title}}</h2>
     <p>by <strong>{{ individMarker.user }}</strong></p><p>at {{individMarker.coords.id | date:'medium'}}</p>
